@@ -1,5 +1,4 @@
 //Akul Kapoor (akulk) and Matt Powell-Palm (mpowellp)
-
 var data1;
 var data2;
 var player =
@@ -129,7 +128,7 @@ var name;
 
 	//Link Clicks
 	$('.link').live("click",function(){
-		$('#picture').html('')
+		$('#bandInfo').html('')
 
 		var big = $(this.innerHTML).attr("data-big");
 		$('#Band').css("background-image","url(" + big + ")");
@@ -138,9 +137,14 @@ var name;
 		$('#Band').css("-webkit-background-size", "cover");
 		$('#Band').css("-moz-background-size", "cover");
 		$('#Band').css("-o-background-size", "cover");
-		/*var band = $(this.innerHTML).attr("band");
+		$('#Band').css("-o-background-size", "cover");
+		var band = $(this.innerHTML).attr("band");
+		$('#bandInfo').append(band);
+		$('#bandInfo').append(player);
+		getSong(band);
 		var object = $(this.innerHTML);
-		var small = $(this.innerHTML).attr("src");
+		setInfo(object,band);
+		/*var small = $(this.innerHTML).attr("src");
 		var parent = this.parentNode;
 		var small = $(parent).find("img").attr("src");
 		var link = $(this.innerHTML).attr("link");

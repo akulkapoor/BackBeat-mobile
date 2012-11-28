@@ -8,6 +8,7 @@
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"> </script>
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"> </script>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+		<script type="text/javascript" src="js/demo.js"></script>
 		<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
 		<script type="text/javascript" src="js/jplayer.playlist.min.js"></script>
 	</head>
@@ -34,8 +35,8 @@
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#similarArtists" class="ui-btn-active ui-state-persist"> Similar Artists</a></li>
-						<li><a href="#simLocArtists">Similar Local Artists </a></li>
+						<li><a href="#simArtists" class="ui-btn-active ui-state-persist"> Artists</a></li>
+						<li><a href="#simLocArtists">Local </a></li>
 						<li><a href="#Shows"> Shows </a></li>
 					</ul>
 				</div>
@@ -58,9 +59,9 @@
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#simArtists"> similar Artists</a></li>
-						<li><a href="#simLocArtists" class="ui-btn-active ui-state-persist">similar Local Artists </a></li>
-						<li><a href="#Shows"> Shows </a></li>
+						<li><a href="#simArtists">Artists</a></li>
+						<li><a href="#simLocArtists" class="ui-btn-active ui-state-persist">Local</a></li>
+						<li><a href="#Shows">Shows</a></li>
 					</ul>
 				</div>
 			</div>
@@ -82,9 +83,9 @@
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#simArtists"> similar Artists</a></li>
-						<li><a href="#simLocArtists">similar Local Artists </a></li>
-						<li><a href="#Shows" class="ui-btn-active ui-state-persist"> Shows </a></li>
+						<li><a href="#simArtists">Artists</a></li>
+						<li><a href="#simLocArtists">Local</a></li>
+						<li><a href="#Shows" class="ui-btn-active ui-state-persist"> Shows</a></li>
 					</ul>
 				</div>
 			</div>
@@ -96,14 +97,8 @@
 			</div>
 
 			<div data-role="content" id = "bandInfo">
-			</div>
-		</div>
 
-
-<!--<div id="picture" class = "hidden">
-
-
-<div id="skin-loader"></div>
+				<div id="skin-loader"></div>
 		
 		<div id="skin-wrapper" data-skin-name="premium-pixels">
 				
@@ -151,30 +146,27 @@
 						To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
 					</div>
 				</div>
+			</div><!-- .jp-audio -->
+			
+			
+		</div><!-- .wrapper -->
+	</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Band" class="ui-btn-active ui-state-persist">Music</a></li>
+						<li><a href="#Bio">Bio</a></li>
+						<li><a href="#Links">Links</a></li>
+						<li><a href="#Tickets" > Tickets</a></li>
+					</ul>
+				</div>
+
+
 			</div>
-			
-			
 		</div>
-	
-</div>
 
 
-
-	<div id="similarArtists" class="content">
-	</div>
-
-	<div id="similarLocalArtists" class="content">
-	</div>
-
-	<div id="shows" class="content">
-	</div>
-
-	<div id = "song" ></div>
-
-
-
-	
-	<script src="jquery.tabify.js" type="text/javascript" charset="utf-8"></script> -->
 	<script type="text/javascript" src = "app2.js"></script>
 </body>
 </html>
