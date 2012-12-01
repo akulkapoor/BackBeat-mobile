@@ -394,7 +394,7 @@ var data1;
 				api_key: "8319d81dde2f49bad5c65a0ce2361a31",
 				format: "json",
 				artist: $("#artistSearch").val(),
-				limit: 250
+				limit: 50
 			},
 
 			function(data) {

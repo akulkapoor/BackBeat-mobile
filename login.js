@@ -74,9 +74,7 @@ app.configure('development', function(){
 });
 app.get('/', routes.index);
 app.get('/fbauth', passport.authenticate('facebook',{scope: 'email'}))
-app.get('/fbauthed', passport.authenticate('facebook',{failureRedirect:'/'}),function (req, res) {
-            res.sendfile('index.html');
-        })
+app.get('/fbauthed', passport.authenticate('facebook',{failureRedirect:'/',successRedirect:'/index.html'}))
 app.get('/logout',function(req,res) {
     req.logOut();
     res.redirect('/');
