@@ -233,7 +233,6 @@ setInfo = function(object,band) {
 //Executes a Search and calls particle explosion
 doSearch = function() {
 	text.txt = $("#artistSearch").val();
-	$('#picture').html('')
 	simArts();
 	simLocArts();
 	allShows();
