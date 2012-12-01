@@ -15,7 +15,7 @@
 
 
 
-
+<!--  -->
 
 
 <body>
@@ -42,7 +42,9 @@
 				</div>
 			</div>
 		</div>
-
+    
+    <!--  -->
+	
 	<div data-role="page" data-title="simLocArtists" id="simLocArtists">
 		<div data-role="header" data-position="fixed"> <h1>What would you like to hear?
 		<img src = "BackBeatLogoEdited3.png" id = "logo"></h1> </div>
@@ -66,6 +68,8 @@
 				</div>
 			</div>
 		</div>
+
+	<!--  -->
 
 	<div data-role="page" data-title="Shows" id="Shows">
 		<div data-role="header" data-position="fixed"> <h1>What would you like to hear?
@@ -91,12 +95,14 @@
 			</div>
 		</div>
 
+	<!--  -->
+
 	<div data-role="page" data-title="Band" id="Band">
 			<div data-role="header" data-position="fixed"> 
 				<a href="#simArtists" data-role="button"> Back </a>
 			</div>
 
-			<div data-role="content" id = "bandInfo">
+			<div data-role="content" id = "bandInfo" class= "blackBox">
 
 				<div id="skin-loader"></div>
 		
@@ -165,6 +171,84 @@
 
 			</div>
 		</div>
+
+	<!--  -->	
+
+	<div data-role="page" data-title="Bio" id="Bio">
+			<div data-role="header" data-position="fixed"> 
+				<a href="#simArtists" data-role="button"> Back </a>
+			</div>
+
+			<div data-role="content" id = "bioInfo" class= "blackBox">
+
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Band">Music</a></li>
+						<li><a href="#Bio" class="ui-btn-active ui-state-persist">Bio</a></li>
+						<li><a href="#Links">Links</a></li>
+						<li><a href="#Tickets" > Tickets</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+
+<!-- -->
+
+	<div data-role="page" data-title="Links" id="Links">
+			<div data-role="header" data-position="fixed"> 
+				<a href="#simArtists" data-role="button"> Back </a>
+			</div>
+
+			<div data-role="content" id = "linkInfo" class= "blackBox">
+
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Band">Music</a></li>
+						<li><a href="#Bio">Bio</a></li>
+						<li><a href="#Links"  class="ui-btn-active ui-state-persist">Links</a></li>
+						<li><a href="#Tickets" > Tickets</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+
+<!-- -->
+
+	<div data-role="page" data-title="Tickets" id="Tickets">
+			<div data-role="header" data-position="fixed"> 
+				<a href="#simArtists" data-role="button"> Back </a>
+			</div>
+
+			<div data-role="content" id = "ticketInfo" class= "blackBox">
+
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#Band">Music</a></li>
+						<li><a href="#Bio">Bio</a></li>
+						<li><a href="#Links">Links</a></li>
+						<li><a href="#Tickets" class="ui-btn-active ui-state-persist"> Tickets</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+		</div>
+
+
+
 
 
 	<script type="text/javascript" src = "app2.js"></script>

@@ -144,52 +144,58 @@ var name;
 		getSong(band);
 		var object = $(this.innerHTML);
 		setInfo(object,band);
-
-		$('#Bio').css("background-image","url(" + big + ")");
-		$('#Bio').css("background-size", "cover");
-		$('#Bio').css("background-position", "center");
-		$('#Bio').css("-webkit-background-size", "cover");
-		$('#Bio').css("-moz-background-size", "cover");
-		$('#Bio').css("-o-background-size", "cover");
-		$('#Bio').css("-o-background-size", "cover");
-		$('#bioInfo').empty();
-		$('#bioInfo').append(band);
+		/*var small = $(this.innerHTML).attr("src");
+		var parent = this.parentNode;
+		var small = $(parent).find("img").attr("src");
+		var link = $(this.innerHTML).attr("link");
+		var startLeft = $(parent).find("img").offset().left;
+		var startTop = $(parent).find("img").offset().top;
+		var startWidth = $(parent).find("img").width();
+		var startHeight = $(parent).find("img").height();
+		$('#picture').append(band +"<br>");
+		$('#bandInfo').append("<img id=bigPic" + ">" + "<br>");
+		if (link.slice(0,7) !== "http://") {
+			$('#picture').append("<div id = page><a href='http://" + link + 
+				"'>" + "Last FM Page" + "</a>" + "</div>");
+		}
+		else {
+			$('#picture').append("<div id = page><a href='" + link + 
+				"'>" + "Last FM Page" + "</a>" + "</div>");
+		}
+		$('#picture').append(player);
+		$("#bigPic").css("opacity",0);
+		$('#bigPic').attr("src", big);
+		$("#picture").attr('class', 'show');
+		setInfo(object,band);
 		getSong(band);
-		var object = $(this.innerHTML);
-		setInfo(object,band,"#bioInfo");
-
-
-		$('#Links').css("background-image","url(" + big + ")");
-		$('#Links').css("background-size", "cover");
-		$('#Links').css("background-position", "center");
-		$('#Links').css("-webkit-background-size", "cover");
-		$('#Links').css("-moz-background-size", "cover");
-		$('#Links').css("-o-background-size", "cover");
-		$('#Links').css("-o-background-size", "cover");
-		$('#linkInfo').empty();
-		$('#linkInfo').append(band);
-		getSong(band);
-		var object = $(this.innerHTML);
-		//setInfo(object,band);
-
-		$('#Tickets').css("background-image","url(" + big + ")");
-		$('#Tickets').css("background-size", "cover");
-		$('#Tickets').css("background-position", "center");
-		$('#Tickets').css("-webkit-background-size", "cover");
-		$('#Tickets').css("-moz-background-size", "cover");
-		$('#Tickets').css("-o-background-size", "cover");
-		$('#Tickets').css("-o-background-size", "cover");
-		$('#ticketInfo').empty();
-		$('#ticketInfo').append(band);
-		getSong(band);
-		var object = $(this.innerHTML);
-		//setInfo(object,band);
+		$("#bigPic").load(function() {
+		var endLeft = $("#bigPic").offset().left;
+		var endTop = $("#bigPic").offset().top;
+		var finalwidth = $('#bigPic').width();
+		var finalheight = $('#bigPic').height();
+		var a = document.createElement("div");
+		//$(a).attr("id","transitionPic");
+		a = "<img src = '" + small + "' id=transitionPic" + ">";
+		$('body').append(a);
+		//Animation
+		$("#transitionPic").css("position","absolute");
+		$("#transitionPic").css("left",startLeft)
+		$("#transitionPic").css("top",startTop)
+		$("#transitionPic").css("width",startWidth)
+		$("#transitionPic").css("height",startHeight)
+		$("#transitionPic").animate({
+			left: endLeft,
+			top: endTop,
+			width: finalwidth,
+			height: finalheight},500,function() {
+		$("#bigPic").css("opacity",1);
+				$('#transitionPic').remove();
+		});
+		});*/
 	});
 
-
-
 //Sets the info of the artist in the picture div
-setInfo = function(object,band,container) {
+setInfo = function(object,band) {
 //
 	$.getJSON('http://ws.audioscrobbler.com/2.0/',
 			{
@@ -218,17 +224,15 @@ setInfo = function(object,band,container) {
 				//$(info).append(head);
 				$(info).append("<br>");
 				$(info).append(body);
-				//$(info).css({"width":"90%","margin-left":"5%","margin-right":"5%"})
-				//}
+				}
 
-				$(container).append(info);
+				$("#picture").append(info);
 			});	
 }
 
 //Executes a Search and calls particle explosion
 doSearch = function() {
 	text.txt = $("#artistSearch").val();
-	$('#picture').html('')
 	simArts();
 	simLocArts();
 	allShows();
@@ -340,8 +344,8 @@ if ($("#locationSearch").val() !== "") {
 
 			var img = document.createElement("div");
 			img.className = "img";
-			img.innerHTML = "<img src='" + item.image[2]["#text"] + 
-			"' data-big=" + item.image[2]["#text"] + " band='" + 
+			img.innerHTML = "<img src='" + item.image[3]["#text"] + 
+			"' data-big=" + item.image[3]["#text"] + " band='" + 
 			item.artists.artist + "' city='" + item.venue.location.city + 
 			"'" + " country='" + item.venue.location.country + "'" + 
 			" theatre='" + item.venue.name + "' link='" + item.url + 
@@ -361,7 +365,7 @@ if ($("#locationSearch").val() !== "") {
 				item.artists.artist + "</a>";
 			}
 			link.innerHTML = "<div id='" + item.artists.artist  + 
-			"' data-big=" + item.image[2]["#text"] + " band='" + 
+			"' data-big=" + item.image[3]["#text"] + " band='" + 
 			item.artists.artist + "' city='" + item.venue.location.city + 
 			"'" + " country='" + item.venue.location.country + "'" + 
 			" theatre='" + item.venue.name+ "' link='" + item.url + 
@@ -407,7 +411,7 @@ var data1;
 
 					var img = document.createElement("div");
 					img.className = "img";
-					img.innerHTML = "<img src=" + item.image[2]["#text"] + 
+					img.innerHTML = "<img src=" + item.image[3]["#text"] + 
 					" data-big=" + item.image[4]["#text"] + " band='" + 
 					item.name + "' link='" +item.url +"'>"
 
@@ -472,7 +476,7 @@ var data2;
 
 						var img = document.createElement("div");
 						img.className = "img";
-						img.innerHTML = "<img src=" + item.image[2]["#text"] + 
+						img.innerHTML = "<img src=" + item.image[3]["#text"] + 
 						" data-big=" + item.image[4]["#text"] + " band='" + 
 						item.name + "' link='" +item.url +"'>"
 
@@ -494,58 +498,3 @@ var data2;
 		});
 	}
 }
-
-
-
-
-
-		/* STUFF THAT USED TO BE IN THE CLICK FUNCTION
-
-		var small = $(this.innerHTML).attr("src");
-		var parent = this.parentNode;
-		var small = $(parent).find("img").attr("src");
-		var link = $(this.innerHTML).attr("link");
-		var startLeft = $(parent).find("img").offset().left;
-		var startTop = $(parent).find("img").offset().top;
-		var startWidth = $(parent).find("img").width();
-		var startHeight = $(parent).find("img").height();
-		$('#picture').append(band +"<br>");
-		$('#bandInfo').append("<img id=bigPic" + ">" + "<br>");
-		if (link.slice(0,7) !== "http://") {
-			$('#picture').append("<div id = page><a href='http://" + link + 
-				"'>" + "Last FM Page" + "</a>" + "</div>");
-		}
-		else {
-			$('#picture').append("<div id = page><a href='" + link + 
-				"'>" + "Last FM Page" + "</a>" + "</div>");
-		}
-		$('#picture').append(player);
-		$("#bigPic").css("opacity",0);
-		$('#bigPic').attr("src", big);
-		$("#picture").attr('class', 'show');
-		setInfo(object,band);
-		getSong(band);
-		$("#bigPic").load(function() {
-		var endLeft = $("#bigPic").offset().left;
-		var endTop = $("#bigPic").offset().top;
-		var finalwidth = $('#bigPic').width();
-		var finalheight = $('#bigPic').height();
-		var a = document.createElement("div");
-		//$(a).attr("id","transitionPic");
-		a = "<img src = '" + small + "' id=transitionPic" + ">";
-		$('body').append(a);
-		//Animation
-		$("#transitionPic").css("position","absolute");
-		$("#transitionPic").css("left",startLeft)
-		$("#transitionPic").css("top",startTop)
-		$("#transitionPic").css("width",startWidth)
-		$("#transitionPic").css("height",startHeight)
-		$("#transitionPic").animate({
-			left: endLeft,
-			top: endTop,
-			width: finalwidth,
-			height: finalheight},500,function() {
-		$("#bigPic").css("opacity",1);
-				$('#transitionPic').remove();
-		});
-		});*/
